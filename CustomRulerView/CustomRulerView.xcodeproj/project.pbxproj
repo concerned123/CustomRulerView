@@ -1,0 +1,368 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		185E27BD2109634D00059D18 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 185E27BC2109634D00059D18 /* AppDelegate.m */; };
+		185E27C02109634D00059D18 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 185E27BF2109634D00059D18 /* ViewController.m */; };
+		185E27C32109634D00059D18 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 185E27C12109634D00059D18 /* Main.storyboard */; };
+		185E27C52109634F00059D18 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 185E27C42109634F00059D18 /* Assets.xcassets */; };
+		185E27C82109634F00059D18 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 185E27C62109634F00059D18 /* LaunchScreen.storyboard */; };
+		185E27CB2109634F00059D18 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 185E27CA2109634F00059D18 /* main.m */; };
+		185E27D8210963EA00059D18 /* RulerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 185E27D4210963EA00059D18 /* RulerView.m */; };
+		185E27D9210963EA00059D18 /* RulerLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 185E27D5210963EA00059D18 /* RulerLayout.m */; };
+		185E27DA210963EA00059D18 /* RulerCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 185E27D7210963EA00059D18 /* RulerCollectionViewCell.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		185E27B82109634D00059D18 /* CustomRulerView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CustomRulerView.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		185E27BB2109634D00059D18 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		185E27BC2109634D00059D18 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		185E27BE2109634D00059D18 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		185E27BF2109634D00059D18 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		185E27C22109634D00059D18 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		185E27C42109634F00059D18 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		185E27C72109634F00059D18 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		185E27C92109634F00059D18 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		185E27CA2109634F00059D18 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		185E27D2210963EA00059D18 /* RulerLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RulerLayout.h; sourceTree = "<group>"; };
+		185E27D3210963EA00059D18 /* RulerCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RulerCollectionViewCell.h; sourceTree = "<group>"; };
+		185E27D4210963EA00059D18 /* RulerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RulerView.m; sourceTree = "<group>"; };
+		185E27D5210963EA00059D18 /* RulerLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RulerLayout.m; sourceTree = "<group>"; };
+		185E27D6210963EA00059D18 /* RulerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RulerView.h; sourceTree = "<group>"; };
+		185E27D7210963EA00059D18 /* RulerCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RulerCollectionViewCell.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		185E27B52109634D00059D18 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		185E27AF2109634D00059D18 = {
+			isa = PBXGroup;
+			children = (
+				185E27BA2109634D00059D18 /* CustomRulerView */,
+				185E27B92109634D00059D18 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		185E27B92109634D00059D18 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				185E27B82109634D00059D18 /* CustomRulerView.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		185E27BA2109634D00059D18 /* CustomRulerView */ = {
+			isa = PBXGroup;
+			children = (
+				185E27D1210963EA00059D18 /* View */,
+				185E27BB2109634D00059D18 /* AppDelegate.h */,
+				185E27BC2109634D00059D18 /* AppDelegate.m */,
+				185E27BE2109634D00059D18 /* ViewController.h */,
+				185E27BF2109634D00059D18 /* ViewController.m */,
+				185E27C12109634D00059D18 /* Main.storyboard */,
+				185E27C42109634F00059D18 /* Assets.xcassets */,
+				185E27C62109634F00059D18 /* LaunchScreen.storyboard */,
+				185E27C92109634F00059D18 /* Info.plist */,
+				185E27CA2109634F00059D18 /* main.m */,
+			);
+			path = CustomRulerView;
+			sourceTree = "<group>";
+		};
+		185E27D1210963EA00059D18 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				185E27D6210963EA00059D18 /* RulerView.h */,
+				185E27D4210963EA00059D18 /* RulerView.m */,
+				185E27D3210963EA00059D18 /* RulerCollectionViewCell.h */,
+				185E27D7210963EA00059D18 /* RulerCollectionViewCell.m */,
+				185E27D2210963EA00059D18 /* RulerLayout.h */,
+				185E27D5210963EA00059D18 /* RulerLayout.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		185E27B72109634D00059D18 /* CustomRulerView */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 185E27CE2109634F00059D18 /* Build configuration list for PBXNativeTarget "CustomRulerView" */;
+			buildPhases = (
+				185E27B42109634D00059D18 /* Sources */,
+				185E27B52109634D00059D18 /* Frameworks */,
+				185E27B62109634D00059D18 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CustomRulerView;
+			productName = CustomRulerView;
+			productReference = 185E27B82109634D00059D18 /* CustomRulerView.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		185E27B02109634D00059D18 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0940;
+				ORGANIZATIONNAME = apple;
+				TargetAttributes = {
+					185E27B72109634D00059D18 = {
+						CreatedOnToolsVersion = 9.4.1;
+					};
+				};
+			};
+			buildConfigurationList = 185E27B32109634D00059D18 /* Build configuration list for PBXProject "CustomRulerView" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 185E27AF2109634D00059D18;
+			productRefGroup = 185E27B92109634D00059D18 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				185E27B72109634D00059D18 /* CustomRulerView */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		185E27B62109634D00059D18 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				185E27C82109634F00059D18 /* LaunchScreen.storyboard in Resources */,
+				185E27C52109634F00059D18 /* Assets.xcassets in Resources */,
+				185E27C32109634D00059D18 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		185E27B42109634D00059D18 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				185E27C02109634D00059D18 /* ViewController.m in Sources */,
+				185E27CB2109634F00059D18 /* main.m in Sources */,
+				185E27D9210963EA00059D18 /* RulerLayout.m in Sources */,
+				185E27DA210963EA00059D18 /* RulerCollectionViewCell.m in Sources */,
+				185E27BD2109634D00059D18 /* AppDelegate.m in Sources */,
+				185E27D8210963EA00059D18 /* RulerView.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		185E27C12109634D00059D18 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				185E27C22109634D00059D18 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		185E27C62109634F00059D18 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				185E27C72109634F00059D18 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		185E27CC2109634F00059D18 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		185E27CD2109634F00059D18 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		185E27CF2109634F00059D18 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4E7S49PEAW;
+				INFOPLIST_FILE = CustomRulerView/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.iCarbonX.CustomRulerView;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		185E27D02109634F00059D18 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4E7S49PEAW;
+				INFOPLIST_FILE = CustomRulerView/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.iCarbonX.CustomRulerView;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		185E27B32109634D00059D18 /* Build configuration list for PBXProject "CustomRulerView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				185E27CC2109634F00059D18 /* Debug */,
+				185E27CD2109634F00059D18 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		185E27CE2109634F00059D18 /* Build configuration list for PBXNativeTarget "CustomRulerView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				185E27CF2109634F00059D18 /* Debug */,
+				185E27D02109634F00059D18 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 185E27B02109634D00059D18 /* Project object */;
+}
