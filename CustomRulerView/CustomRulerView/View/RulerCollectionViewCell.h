@@ -32,6 +32,8 @@ typedef NS_ENUM(NSInteger, RulerNumberDirection) {
 @property (nonatomic, assign) CGFloat distanceFromScaleToNumber;                /**< 刻度和数字之间的距离  */
 @property (nonatomic, assign) RulerNumberDirection numberDirection;             /**< 数字方向  */
 @property (nonatomic, assign) NSInteger min;                                    /**< 最小值  */
+@property (nonatomic, assign) NSInteger max;                                    /**< 最大值  */
+@property (nonatomic, assign) BOOL reverse; 
 
 @property (nonatomic, assign) NSInteger index;                                  /**< cell下标  */
 @property (nonatomic, assign) BOOL isDecimal;                                   /**< 保留一位小数类型  */

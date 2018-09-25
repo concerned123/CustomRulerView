@@ -42,6 +42,8 @@
     } else if (tag == 3) {
         
     }
+    
+    NSLog(@"value = %lf", value);
 }
 
 #pragma mark - getter
@@ -161,11 +163,13 @@
         _numberLeftRulerView.max = 300;
         _numberLeftRulerView.min = 20;
         //默认值
-        _numberLeftRulerView.defaultNumber = 105.8;
+        _numberLeftRulerView.defaultNumber = 74.7;
         //使用小数类型
         _numberLeftRulerView.isDecimal = YES;
         //选中
         _numberLeftRulerView.selectionEnable = YES;
+        //数字顺序相反
+        _numberLeftRulerView.reverse = YES;
         
         _numberLeftRulerView.backgroundColor = [UIColorFromHex(0xE4E6EB) colorWithAlphaComponent:0.3f];
         _numberLeftRulerView.tag = 2;

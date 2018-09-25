@@ -119,7 +119,13 @@ static NSString *const rulerCollectionViewCellIdentifier = @"rulerCollectionView
     BOOL suitableNumber = NO;           //默认选中值是否符合条件
     
     //默认选中值有效才能调用偏移方法
-    double activeSelectionNumber = self.defaultNumber - self.min;
+    double activeSelectionNumber = 0;
+    if (self.reverse) {
+        activeSelectionNumber = self.max - self.defaultNumber;
+    } else {
+        activeSelectionNumber = self.defaultNumber - self.min;
+    }
+    
     if (activeSelectionNumber >= 0) {
         if (self.isDecimal) {
             //偏移计算：(单个刻度尺宽度 + 刻度尺间距) * 总刻度 - 起始偏移 + 最后一个刻度宽度 / 2.0
@@ -218,6 +224,8 @@ static NSString *const rulerCollectionViewCellIdentifier = @"rulerCollectionView
     cell.distanceFromScaleToNumber = self.distanceFromScaleToNumber;
     cell.isDecimal = self.isDecimal;
     cell.min = self.min;
+    cell.max = self.max;
+    cell.reverse = self.reverse;
     
     [cell setNeedsLayout];
     [cell makeCellHiddenText];
@@ -236,9 +244,19 @@ static NSString *const rulerCollectionViewCellIdentifier = @"rulerCollectionView
     double value = 0;
     //判断是否是小数
     if (self.isDecimal) {
-        value = index * 1.0 / 10.0 + self.min;
+//        value = index * 1.0 / 10.0 + self.min;
+        if (self.reverse) {
+            value = self.max - (index * 1.0 / 10.0 + self.min) + self.min;
+        } else {
+            value = index * 1.0 / 10.0 + self.min;
+        }
     } else {
-        value = index * 1.0 + self.min;
+//        value = index * 1.0 + self.min;
+        if (self.reverse) {
+            value = self.max - index;
+        } else {
+            value = index * 1.0 + self.min;
+        }
     }
     
     //保证数据在范围内

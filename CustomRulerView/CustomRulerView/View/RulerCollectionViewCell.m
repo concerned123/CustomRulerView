@@ -33,9 +33,22 @@
     if (self.index % 10 == 0) {
         NSString *text = @"";
         if (self.isDecimal) {
-            text = [NSString stringWithFormat:@"%ld", self.index/10 + self.min];
+//            text = [NSString stringWithFormat:@"%ld", self.index/10 + self.min];
+            NSInteger showIndex = self.index/10 + self.min;
+            if (self.reverse) {
+                showIndex = self.max - showIndex + self.min;
+                text = [NSString stringWithFormat:@"%ld", showIndex];
+            } else {
+                text = [NSString stringWithFormat:@"%ld", self.index/10 + self.min];
+            }
         } else {
-            text = [NSString stringWithFormat:@"%ld", (long)self.index + self.min];
+//            text = [NSString stringWithFormat:@"%ld", (long)self.index + self.min];
+            NSInteger showIndex = self.index + self.min;
+            if (self.reverse) {
+                text = [NSString stringWithFormat:@"%ld", (long)(self.max - showIndex + self.min)];
+            } else {
+                text = [NSString stringWithFormat:@"%ld", (long)showIndex];
+            }
         }
         
         //字体
@@ -89,9 +102,22 @@
     self.selectTextLayer = nil;
     NSString *text = @"";
     if (self.isDecimal) {
-        text = [NSString stringWithFormat:@"%.1lf", self.index/10.0 + self.min];
+//        text = [NSString stringWithFormat:@"%.1lf", self.index/10.0 + self.min];
+        double showIndex = self.index/10.0 + self.min;
+        if (self.reverse) {
+            showIndex = self.max - showIndex + self.min;
+            text = [NSString stringWithFormat:@"%.1lf", showIndex];
+        } else {
+            text = [NSString stringWithFormat:@"%.1lf", self.index/10.0 + self.min];
+        }
     } else {
-        text = [NSString stringWithFormat:@"%ld", (long)self.index + self.min];
+//        text = [NSString stringWithFormat:@"%ld", (long)self.index + self.min];
+        NSInteger showIndex = self.index + self.min;
+        if (self.reverse) {
+            text = [NSString stringWithFormat:@"%ld", (long)(self.max - showIndex + self.min)];
+        } else {
+            text = [NSString stringWithFormat:@"%ld", (long)showIndex];
+        }
     }
     CGSize size = [text boundingRectWithSize:CGSizeMake(SCREEN_WIDTH_RULER, CGFLOAT_MAX) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName: [UIFont fontWithName:@"PingFangSC-Semibold" size:18]} context:nil].size;
     

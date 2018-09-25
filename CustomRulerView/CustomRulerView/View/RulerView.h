@@ -43,7 +43,8 @@
 @property (nonatomic, assign) BOOL isDecimal;                                   /**< 保留一位小数类型  */
 @property (nonatomic, assign) BOOL selectionEnable;                             /**< 是否允许选中  */
 @property (nonatomic, assign) BOOL useGradient;                                 /**< 是否使用渐变色  */
+@property (nonatomic, assign) BOOL reverse;                             
 
-@property (nonatomic, weak) id<RulerViewDelegate> delegate;                     /**< 代理  */
+@property (nonatomic, weak) id<RulerViewDelegate> delegate;                     /**< 代理  */ 
 
 @end
