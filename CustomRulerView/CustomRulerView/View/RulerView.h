@@ -44,7 +44,7 @@
 @property (nonatomic, assign) BOOL selectionEnable;                             /**< 是否允许选中  */
 @property (nonatomic, assign) BOOL useGradient;                                 /**< 是否使用渐变色  */
 @property (nonatomic, assign) BOOL reverse;                                     /**< 刻度尺反向  */
-@property (nonatomic, assign) BOOL InfiniteLoop;                                /**< 刻度尺循环  */
+@property (nonatomic, assign) BOOL infiniteLoop;                                /**< 刻度尺循环  */
 
 + (instancetype)defaultConfig;
 

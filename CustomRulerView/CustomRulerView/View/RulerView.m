@@ -168,7 +168,7 @@ static NSString *const rulerCollectionViewCellIdentifier = @"rulerCollectionView
     //校正偏差
     [self correctionDeviation:offset];
     //如果是循环尺
-    if (self.rulerConfig.InfiniteLoop) {
+    if (self.rulerConfig.infiniteLoop) {
         NSInteger totalCount = [self.rulerCollectionView numberOfItemsInSection:0];
         NSInteger factor = totalCount / self.rulerLayout.actualLength / 2;
         //一轮循环的总偏移量
@@ -233,7 +233,7 @@ static NSString *const rulerCollectionViewCellIdentifier = @"rulerCollectionView
         //告诉layout数据的实际长度，以便计算每组数据之间的留白
         self.rulerLayout.actualLength = totalCount;
         NSInteger loopCount = totalCount;
-        if (self.rulerConfig.InfiniteLoop) {
+        if (self.rulerConfig.infiniteLoop) {
             if (totalCount >= 1000 && totalCount <= 5000) {
                 loopCount = totalCount * 500;
             } else if (totalCount < 1000) {
@@ -277,7 +277,7 @@ static NSString *const rulerCollectionViewCellIdentifier = @"rulerCollectionView
                       (scrollView.contentOffset.y + self.rulerCollectionView.contentInset.top)) ;
     
     NSInteger index = 0;
-    if (self.rulerConfig.InfiniteLoop) {
+    if (self.rulerConfig.infiniteLoop) {
         //一轮循环的总偏移量
         CGFloat oneRoundOffset = (self.rulerConfig.scaleWidth + self.rulerConfig.distanceBetweenScale) * self.rulerLayout.actualLength + ((self.rulerConfig.scaleWidth + self.rulerLayout.spacing) * 4 + self.rulerConfig.scaleWidth/2.0);
         

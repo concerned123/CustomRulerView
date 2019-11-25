@@ -90,7 +90,7 @@
         config.selectionEnable = YES;
         //使用渐变背景
         config.useGradient = YES;
-        config.InfiniteLoop = YES;
+        config.infiniteLoop = YES;
         
         _numberTopRulerView.rulerConfig = config;
     }
@@ -184,7 +184,7 @@
         config.selectionEnable = YES;
         //数字顺序相反
         config.reverse = YES;
-        config.InfiniteLoop = YES;
+        config.infiniteLoop = YES;
         
         _numberLeftRulerView.rulerConfig = config;
     }
