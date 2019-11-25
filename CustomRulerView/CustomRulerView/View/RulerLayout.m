@@ -132,9 +132,14 @@
     //找到距离collectionView中点位置最近的cell 并且计算他们之间的最小距离(minOffset)
     CGFloat minOffset = MAXFLOAT;
     for (UICollectionViewLayoutAttributes *attribute in attributes) {
-        CGFloat offset = (self.scrollDirection == UICollectionViewScrollDirectionHorizontal) ? (attribute.center.x - center) : (attribute.center.y - center);
-        if (ABS(offset) < ABS(minOffset)) {
-            minOffset = offset;
+        
+        //判断当前是第几组
+        NSInteger loopGroup = attribute.indexPath.item / self.actualLength;
+        if (attribute.indexPath.item % self.offset == loopGroup % self.offset) {
+            CGFloat offset = (self.scrollDirection == UICollectionViewScrollDirectionHorizontal) ? (attribute.center.x - center) : (attribute.center.y - center);
+            if (ABS(offset) < ABS(minOffset)) {
+                minOffset = offset;
+            }
         }
     }
     
@@ -207,6 +212,13 @@
         _scrollDirection = scrollDirection;
         [self invalidateLayout];
     }
+}
+
+- (NSInteger)offset {
+    if (_offset <= 0) {
+        return 1;
+    }
+    return _offset;
 }
 
 @end

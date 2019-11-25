@@ -28,9 +28,9 @@
     self.view.backgroundColor = [UIColor whiteColor];
     
     [self.view addSubview:self.numberTopRulerView];
-//    [self.view addSubview:self.numberBottomRulerView];
-//    [self.view addSubview:self.numberLeftRulerView];
-//    [self.view addSubview:self.numberRightRulerView];
+    [self.view addSubview:self.numberBottomRulerView];
+    [self.view addSubview:self.numberLeftRulerView];
+    [self.view addSubview:self.numberRightRulerView];
     
     [self.view addSubview:self.numberBottomRulerDefaultLabel];
 }
@@ -83,7 +83,7 @@
         config.max = 200;
         config.min = 0;
         //默认值
-        config.defaultNumber = 57.3;
+        config.defaultNumber = 57;
         //使用小数类型
         config.isDecimal = YES;
         //选中
@@ -130,11 +130,12 @@
         config.numberDirection = numberBottom;
         
         //取值范围
-        config.max = 5000;
-        config.min = 2000;
+        config.max = 50;
+        config.min = 0;
         //默认值
-        config.defaultNumber = 3532;
-        config.isDecimal = YES;
+        config.defaultNumber = 10;
+        config.infiniteLoop = YES;
+        config.offset = 5;
         
         _numberBottomRulerView.rulerConfig = config;
     }

@@ -42,6 +42,7 @@ static NSString *const rulerCollectionViewCellIdentifier = @"rulerCollectionView
     config.numberColor = UIColorFromHex(0x617272);
     config.numberDirection = numberBottom;
     config.min = 0;
+    config.offset = 1;
     
     return config;
 }
@@ -91,6 +92,7 @@ static NSString *const rulerCollectionViewCellIdentifier = @"rulerCollectionView
     //计算cell的size
     self.rulerLayout = [[RulerLayout alloc] init];
     self.rulerLayout.spacing = self.rulerConfig.distanceBetweenScale;
+    self.rulerLayout.offset = self.rulerConfig.offset;
     if (self.rulerConfig.numberDirection == numberTop || self.rulerConfig.numberDirection == numberBottom) {
         //水平方向
         self.rulerLayout.scrollDirection = UICollectionViewScrollDirectionHorizontal;

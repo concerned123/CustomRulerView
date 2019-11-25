@@ -12,7 +12,8 @@
 
 @property (nonatomic, assign) CGFloat spacing;                                      /**< cell间距  */
 @property (nonatomic, assign) CGSize itemSize;
-@property (nonatomic, assign) NSInteger actualLength;
+@property (nonatomic, assign) NSInteger actualLength;                               /**< 数据的实际长度  */
+@property (nonatomic, assign) NSInteger offset;
 @property (nonatomic, assign) UICollectionViewScrollDirection scrollDirection;      /**< 滑动方向  */
 
 @end
