@@ -29,6 +29,26 @@
 }
 
 - (CGSize)collectionViewContentSize {
+    //计算额外组数
+    NSInteger total = [self.collectionView numberOfItemsInSection:0];
+    NSInteger loop = total / self.actualLength;
+    CGFloat extra = 0;
+    
+    if (self.scrollDirection == UICollectionViewScrollDirectionHorizontal) {
+        extra = (loop - 1) * ((self.itemSize.width + self.spacing) * 4  + self.itemSize.width/2.0);
+    } else {
+        extra = (loop - 1) * ((self.itemSize.height + self.spacing) * 4  + self.itemSize.height/2.0);
+    }
+    
+    //item总数
+    NSInteger count = [self.collectionView numberOfItemsInSection:0];
+    //宽度 水平方向 = item总数 * (item宽度 + space) - space ; 垂直方向 = collectionView的宽度
+    CGFloat width = (self.scrollDirection == UICollectionViewScrollDirectionHorizontal) ? count*(self.itemSize.width+self.spacing)-self.spacing + extra : self.collectionView.bounds.size.width;
+    //高度 水平方向 = collectionView的宽度 ; 垂直方向 = item总数 * (item宽度 + space) - space
+    CGFloat height = (self.scrollDirection == UICollectionViewScrollDirectionHorizontal) ? self.collectionView.bounds.size.height : count*(self.itemSize.height+self.spacing)-self.spacing + extra;
+    return CGSizeMake(width, height);
+    
+    /*
     //item总数
     NSInteger count = [self.collectionView numberOfItemsInSection:0];
     //宽度 水平方向 = item总数 * (item宽度 + space) - space ; 垂直方向 = collectionView的宽度
@@ -36,11 +56,39 @@
     //高度 水平方向 = collectionView的宽度 ; 垂直方向 = item总数 * (item宽度 + space) - space
     CGFloat height = (self.scrollDirection == UICollectionViewScrollDirectionHorizontal) ? self.collectionView.bounds.size.height : count*(self.itemSize.height+self.spacing)-self.spacing;
     return CGSizeMake(width, height);
+     */
 }
 
 /** 设置每个indexPath对应cell的Attribute */
 - (UICollectionViewLayoutAttributes *)layoutAttributesForItemAtIndexPath:(NSIndexPath *)indexPath {
+    //循环组数
+    NSInteger loop = indexPath.row / self.actualLength;
+    UICollectionViewLayoutAttributes *attribute = [UICollectionViewLayoutAttributes layoutAttributesForCellWithIndexPath:indexPath];
+    attribute.size = self.itemSize;
     
+    //每个循环最后一个cell的间距
+    CGFloat extra = 0;
+    if (self.scrollDirection == UICollectionViewScrollDirectionHorizontal) {
+        extra = loop * ((self.itemSize.width + self.spacing) * 4  + self.itemSize.width/2.0);
+    } else {
+        extra = loop * ((self.itemSize.height + self.spacing) * 4  + self.itemSize.height/2.0);
+    }
+    //x坐标 水平方向 = item总数 * (item宽度 + space) ; 垂直方向 = (collectionView - item宽度) / 2.0  (居中显示)
+    CGFloat x = (self.scrollDirection == UICollectionViewScrollDirectionHorizontal) ?
+    (indexPath.item * (self.spacing + self.itemSize.width)) + extra :
+    (0.5 * (self.collectionView.bounds.size.width - self.itemSize.width));
+    
+    //y坐标 水平方向 = (collectionView - item宽度) / 2.0 (居中显示) ; 垂直方向 = item总数 * (item高度 + space)
+    CGFloat y = (self.scrollDirection == UICollectionViewScrollDirectionHorizontal) ?
+    (0.5 * (self.collectionView.bounds.size.height - self.itemSize.height)) :
+    (indexPath.item * (self.spacing + self.itemSize.height)) + extra;
+    
+    //cell的实际frame
+    attribute.frame = CGRectMake(x, y, attribute.size.width, attribute.size.height);
+    
+    return attribute;
+    
+    /*
     UICollectionViewLayoutAttributes *attribute = [UICollectionViewLayoutAttributes layoutAttributesForCellWithIndexPath:indexPath];
     attribute.size = self.itemSize;
     
@@ -58,6 +106,7 @@
     attribute.frame = CGRectMake(x, y, attribute.size.width, attribute.size.height);
     
     return attribute;
+     */
 }
 
 /** 返回指定rect范围中所有cell的Attributes */
@@ -98,16 +147,31 @@
 
 /** 返回指定范围内的attributes数组 */
 - (NSArray *)attributesInRect:(CGRect)rect {
+    //计算额外组数
+    //一轮循环的总偏移量
+    CGFloat scaleWidth = 0;
+    NSInteger scrollLoop = 0;
+    if (self.scrollDirection == UICollectionViewScrollDirectionHorizontal) {
+        scaleWidth = self.itemSize.width;
+        CGFloat oneRoundOffset = (scaleWidth + self.spacing) * self.actualLength + ((scaleWidth + self.spacing) * 4 + scaleWidth/2.0);
+        scrollLoop = rect.origin.x / oneRoundOffset;
+    } else {
+        scaleWidth = self.itemSize.height;
+        CGFloat oneRoundOffset = (scaleWidth + self.spacing) * self.actualLength + ((scaleWidth + self.spacing) * 4 + scaleWidth/2.0);
+        scrollLoop = rect.origin.y / oneRoundOffset;
+    }
+    CGFloat extra = scrollLoop * ((scaleWidth + self.spacing) * 4  + scaleWidth/2.0);
+    
     //指定范围内的第一个cell的下标
     NSInteger preIndex = (self.scrollDirection == UICollectionViewScrollDirectionHorizontal) ?
-    ((rect.origin.x)/(self.itemSize.width+self.spacing)) :
-    ((rect.origin.y)/(self.itemSize.height+self.spacing));
+    ((rect.origin.x-extra)/(self.itemSize.width+self.spacing)) :
+    ((rect.origin.y-extra)/(self.itemSize.height+self.spacing));
     preIndex = ((preIndex < 0) ? 0 : preIndex);                         //防止下标越界
     
     //指定范围内的最后一个cell下标
     NSInteger latIndex = (self.scrollDirection == UICollectionViewScrollDirectionHorizontal) ?
-    ((CGRectGetMaxX(rect))/(self.itemSize.width+self.spacing)) :
-    ((CGRectGetMaxY(rect))/(self.itemSize.height+self.spacing));
+    ((CGRectGetMaxX(rect)-extra)/(self.itemSize.width+self.spacing)) :
+    ((CGRectGetMaxY(rect)-extra)/(self.itemSize.height+self.spacing));
     
     NSInteger itemCount = [self.collectionView numberOfItemsInSection:0];
     latIndex = ((latIndex >= itemCount) ? itemCount-1 : latIndex);      //防止下标越界
